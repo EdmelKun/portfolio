@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-const SITE_URL = 'https://TODO-set-after-phase-5-deploy.vercel.app'
+const SITE_URL = 'https://edmel-linaugo.vercel.app'
 
 const layerSchema = z.enum(['client', 'server', 'platform'])
 

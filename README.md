@@ -2,6 +2,8 @@
 
 Personal site for **Edmel John Linaugo** — Full Stack Software Engineer. One static page, dark only, built to be read in about a minute.
 
+**Live:** [edmel-linaugo.vercel.app](https://edmel-linaugo.vercel.app/)
+
 ## Stack
 
 Vite · React 19 · TypeScript · Tailwind CSS v4 · Zod
