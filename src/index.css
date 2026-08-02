@@ -1,0 +1,70 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ground-top: #0c1a2b;
+  --color-ground-mid: #0e2137;
+  --color-ground-bottom: #0a1522;
+
+  --color-client: #31b0e6;
+  --color-server: #f5b335;
+
+  --color-ink: #f2f7fb;
+  --color-ink-secondary: #9fb8ce;
+  --color-ink-muted: #5f7c97;
+  --color-hairline: #1e3a55;
+
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans: 'IBM Plex Sans Variable', 'IBM Plex Sans', system-ui, sans-serif;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100dvh;
+    background-color: var(--color-ground-bottom);
+    background-image: linear-gradient(
+      180deg,
+      var(--color-ground-top) 0%,
+      var(--color-ground-mid) 45%,
+      var(--color-ground-bottom) 100%
+    );
+    background-attachment: fixed;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-client);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-client) 32%, transparent);
+    color: var(--color-ink);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
