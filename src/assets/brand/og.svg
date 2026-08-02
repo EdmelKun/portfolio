@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0C1A2B"/>
+      <stop offset="55%" stop-color="#0E2137"/>
+      <stop offset="100%" stop-color="#0A1522"/>
+    </linearGradient>
+    <linearGradient id="trail" gradientUnits="userSpaceOnUse"
+                    x1="240" y1="460" x2="618" y2="460">
+      <stop offset="0%" stop-color="#31B0E6" stop-opacity="0"/>
+      <stop offset="70%" stop-color="#31B0E6" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#31B0E6" stop-opacity="1"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#panel)"/>
+  <rect x="90" y="150" width="4" height="196" fill="#F5B335"/>
+
+  <g font-family="IBM Plex Mono">
+    <text x="126" y="182" font-size="20" letter-spacing="6" font-weight="600"
+          fill="#31B0E6">FULL STACK SOFTWARE ENGINEER</text>
+
+    <text x="126" y="256" font-size="58" letter-spacing="1" font-weight="600"
+          fill="#F2F7FB">Edmel John Linaugo<tspan fill="#F5B335">_</tspan></text>
+
+    <text x="126" y="302" font-size="24" fill="#9FB8CE" xml:space="preserve">TypeScript<tspan fill="#F5B335"> · </tspan>Node.js<tspan fill="#F5B335"> · </tspan>React<tspan fill="#F5B335"> · </tspan>PostgreSQL<tspan fill="#F5B335"> · </tspan>AWS</text>
+
+    <text x="126" y="340" font-size="19" fill="#5F7C97">AI-powered features in production · React Native · Docker · Fargate</text>
+
+    <line x1="126" y1="460" x2="1110" y2="460" stroke="#1E3A55" stroke-width="3"/>
+    <line x1="240" y1="460" x2="618" y2="460" stroke="url(#trail)" stroke-width="4"
+          stroke-linecap="round"/>
+
+    <circle cx="126" cy="460" r="6" fill="#1E3A55"/>
+    <circle cx="618" cy="460" r="8" fill="#31B0E6" filter="url(#glow)"/>
+    <circle cx="1110" cy="460" r="6" fill="#1E3A55"/>
+
+    <text x="126" y="494" font-size="16" letter-spacing="4" font-weight="600"
+          fill="#5F7C97">CLIENT</text>
+    <text x="618" y="494" font-size="16" letter-spacing="4" font-weight="600"
+          fill="#31B0E6" text-anchor="middle">API</text>
+    <text x="1110" y="494" font-size="16" letter-spacing="4" font-weight="600"
+          fill="#5F7C97" text-anchor="end">DATA</text>
+
+    <text x="126" y="556" font-size="17" letter-spacing="3"
+          fill="#5F7C97">ILOILO, PH<tspan fill="#F5B335"> // </tspan>GITHUB.COM/EDMELKUN</text>
+  </g>
+</svg>

@@ -69,15 +69,6 @@ const experienceSchema = z.object({
   projects: z.array(experienceProjectSchema).optional(),
 })
 
-const seoSchema = z.object({
-  title: z.string().min(1).max(65),
-  description: z.string().min(1).max(160),
-  canonical: z.url(),
-  ogImage: z.url(),
-  ogImageAlt: z.string().min(1),
-  twitterCard: z.literal('summary_large_image'),
-})
-
 const contentSchema = z.object({
   site: siteSchema,
   hero: heroSchema,
@@ -85,7 +76,6 @@ const contentSchema = z.object({
   work: z.array(workSchema).min(1),
   stack: z.array(stackGroupSchema).min(1),
   experience: z.array(experienceSchema).min(1),
-  seo: seoSchema,
 })
 
 export type Content = z.infer<typeof contentSchema>
@@ -266,14 +256,4 @@ export const content = contentSchema.parse({
     },
   ],
 
-  seo: {
-    title: 'Edmel John Linaugo — Full Stack Software Engineer',
-    description:
-      'Full stack engineer in TypeScript across the PERN stack, React Native for mobile, shipping AI-powered features into production.',
-    canonical: SITE_URL,
-    ogImage: `${SITE_URL}/og.png`,
-    ogImageAlt:
-      'Edmel John Linaugo, Full Stack Software Engineer — a request travelling from client to API to data.',
-    twitterCard: 'summary_large_image',
-  },
 })
