@@ -1,0 +1,345 @@
+.motif {
+  --dot: 10px;
+  --motif-duration: 6.2s;
+  width: 100%;
+}
+
+.motif-track {
+  position: relative;
+  width: 100%;
+  height: 190px;
+}
+
+.motif-rail {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--dot) / 2);
+  width: 1px;
+  background: var(--color-hairline);
+}
+
+.motif-node {
+  position: absolute;
+  left: 0;
+  width: var(--dot);
+  height: var(--dot);
+}
+
+.motif-node-0 {
+  top: 0;
+}
+
+.motif-node-1 {
+  top: calc((100% - var(--dot)) * 0.5);
+}
+
+.motif-node-2 {
+  top: calc(100% - var(--dot));
+}
+
+.motif-dot {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  border: 1px solid var(--color-hairline);
+  background: var(--color-ground-bottom);
+}
+
+.motif-ring {
+  position: absolute;
+  inset: -5px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+  opacity: 0;
+  animation: motif-flash var(--motif-duration) linear infinite;
+}
+
+.motif-ring-client {
+  color: var(--color-client);
+}
+
+.motif-ring-server {
+  color: var(--color-server);
+}
+
+.motif-node-0 .motif-ring-client {
+  animation-delay: 0s;
+}
+
+.motif-node-1 .motif-ring-client {
+  animation-delay: 1.18s;
+}
+
+.motif-node-2 .motif-ring-client {
+  animation-delay: 2.36s;
+}
+
+.motif-node-2 .motif-ring-server {
+  animation-delay: 2.79s;
+}
+
+.motif-node-1 .motif-ring-server {
+  animation-delay: 3.97s;
+}
+
+.motif-node-0 .motif-ring-server {
+  animation-delay: 5.15s;
+}
+
+.motif-label {
+  position: absolute;
+  top: 50%;
+  left: calc(var(--dot) + 0.85rem);
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  color: var(--color-ink-muted);
+  white-space: nowrap;
+}
+
+.motif-pulse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--dot);
+  height: 100%;
+  opacity: 0;
+}
+
+.motif-pulse::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--dot);
+  height: var(--dot);
+  border-radius: 999px;
+  background: currentColor;
+  box-shadow: 0 0 12px 2px currentColor;
+}
+
+.motif-pulse-request {
+  color: var(--color-client);
+  animation: motif-request-y var(--motif-duration) linear infinite;
+}
+
+.motif-pulse-response {
+  color: var(--color-server);
+  animation: motif-response-y var(--motif-duration) linear infinite;
+}
+
+@keyframes motif-flash {
+  0% {
+    opacity: 0;
+  }
+  3% {
+    opacity: 1;
+  }
+  14% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes motif-request-y {
+  0% {
+    translate: 0 0;
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+  34% {
+    opacity: 1;
+  }
+  38% {
+    translate: 0 calc(100% - var(--dot));
+    opacity: 0;
+  }
+  100% {
+    translate: 0 calc(100% - var(--dot));
+    opacity: 0;
+  }
+}
+
+@keyframes motif-response-y {
+  0% {
+    translate: 0 calc(100% - var(--dot));
+    opacity: 0;
+  }
+  45% {
+    translate: 0 calc(100% - var(--dot));
+    opacity: 0;
+  }
+  49% {
+    opacity: 1;
+  }
+  79% {
+    opacity: 1;
+  }
+  83% {
+    translate: 0 0;
+    opacity: 0;
+  }
+  100% {
+    translate: 0 0;
+    opacity: 0;
+  }
+}
+
+@keyframes motif-request-x {
+  0% {
+    translate: 0 0;
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+  34% {
+    opacity: 1;
+  }
+  38% {
+    translate: calc(100% - var(--dot)) 0;
+    opacity: 0;
+  }
+  100% {
+    translate: calc(100% - var(--dot)) 0;
+    opacity: 0;
+  }
+}
+
+@keyframes motif-response-x {
+  0% {
+    translate: calc(100% - var(--dot)) 0;
+    opacity: 0;
+  }
+  45% {
+    translate: calc(100% - var(--dot)) 0;
+    opacity: 0;
+  }
+  49% {
+    opacity: 1;
+  }
+  79% {
+    opacity: 1;
+  }
+  83% {
+    translate: 0 0;
+    opacity: 0;
+  }
+  100% {
+    translate: 0 0;
+    opacity: 0;
+  }
+}
+
+@media (min-width: 640px) {
+  .motif-track {
+    height: var(--dot);
+    margin-bottom: 2.5rem;
+  }
+
+  .motif-rail {
+    top: calc(var(--dot) / 2);
+    right: 0;
+    bottom: auto;
+    left: 0;
+    width: auto;
+    height: 1px;
+  }
+
+  .motif-node-0 {
+    top: 0;
+    left: 0;
+  }
+
+  .motif-node-1 {
+    top: 0;
+    left: calc((100% - var(--dot)) * 0.5);
+  }
+
+  .motif-node-2 {
+    top: 0;
+    left: calc(100% - var(--dot));
+  }
+
+  .motif-label {
+    top: calc(100% + 0.7rem);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .motif-node-0 .motif-label {
+    left: 0;
+    transform: none;
+  }
+
+  .motif-node-2 .motif-label {
+    right: 0;
+    left: auto;
+    transform: none;
+  }
+
+  .motif-pulse {
+    width: 100%;
+    height: var(--dot);
+  }
+
+  .motif-pulse-request {
+    animation-name: motif-request-x;
+  }
+
+  .motif-pulse-response {
+    animation-name: motif-response-x;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motif-ring {
+    animation: none;
+    opacity: 0;
+  }
+
+  .motif-pulse {
+    animation: none;
+    opacity: 1;
+  }
+
+  .motif-pulse-request {
+    translate: 0 calc(100% - var(--dot));
+  }
+
+  .motif-pulse-response {
+    translate: 0 0;
+  }
+
+  .motif-rail {
+    background: linear-gradient(
+      180deg,
+      var(--color-client),
+      var(--color-server)
+    );
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (min-width: 640px) {
+  .motif-pulse-request {
+    translate: calc(100% - var(--dot)) 0;
+  }
+
+  .motif-pulse-response {
+    translate: 0 0;
+  }
+
+  .motif-rail {
+    background: linear-gradient(
+      90deg,
+      var(--color-client),
+      var(--color-server)
+    );
+  }
+}
