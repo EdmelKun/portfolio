@@ -1,7 +1,11 @@
 .motif {
   --dot: 10px;
   --motif-duration: 6.2s;
+  --motif-bleed: 14px;
   width: 100%;
+  margin: calc(var(--motif-bleed) * -1);
+  padding: var(--motif-bleed);
+  overflow: hidden;
 }
 
 .motif-track {
