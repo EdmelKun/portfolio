@@ -1,3 +1,4 @@
+import { Contact } from './components/Contact'
 import { Experience } from './components/Experience'
 import { Hero } from './components/Hero'
 import { Stack } from './components/Stack'
@@ -10,6 +11,7 @@ export default function App() {
       <Work />
       <Stack />
       <Experience />
+      <Contact />
     </div>
   )
 }
