@@ -1,3 +1,4 @@
+import { Experience } from './components/Experience'
 import { Hero } from './components/Hero'
 import { Stack } from './components/Stack'
 import { Work } from './components/Work'
@@ -8,6 +9,7 @@ export default function App() {
       <Hero />
       <Work />
       <Stack />
+      <Experience />
     </div>
   )
 }
