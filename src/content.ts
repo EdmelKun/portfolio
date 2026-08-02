@@ -126,13 +126,14 @@ export const content = contentSchema.parse({
       url: 'https://www.ryzehealth.com/',
       status: 'live',
       summary:
-        'One portal for independent physicians: insurance, specialty-medication marketplace, provider network, telehealth. Built with a US-based team, working async across timezones.',
+        'One portal for independent physicians: insurance, specialty-medication marketplace, provider network, telehealth. Clinical decision support backed by LLMs on Amazon Bedrock. Built with a US-based team, working async across timezones.',
       stack: [
         { label: 'TypeScript', layer: 'platform' },
         { label: 'React', layer: 'client' },
         { label: 'Node.js', layer: 'server' },
         { label: 'Express', layer: 'server' },
         { label: 'PostgreSQL', layer: 'server' },
+        { label: 'Amazon Bedrock', layer: 'server' },
         { label: 'AWS', layer: 'platform' },
         { label: 'Docker', layer: 'platform' },
       ],
@@ -179,7 +180,14 @@ export const content = contentSchema.parse({
     {
       layer: 'server',
       label: 'server',
-      items: ['Node.js', 'Express', 'Nest.js', 'PostgreSQL', 'Prisma'],
+      items: [
+        'Node.js',
+        'Express',
+        'Nest.js',
+        'PostgreSQL',
+        'Prisma',
+        'Amazon Bedrock',
+      ],
     },
     {
       layer: 'platform',
