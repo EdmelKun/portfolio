@@ -1,8 +1,12 @@
 import { useEffect, useState } from 'react'
 import { content } from '../content'
+import { useActiveSection } from '../hooks/useActiveSection'
+
+const navHrefs = content.nav.map((item) => item.href)
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false)
+  const active = useActiveSection(navHrefs)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -22,23 +26,31 @@ export function Nav() {
       <div className="mx-auto flex w-full max-w-5xl items-center justify-between gap-4 px-6 py-4 sm:px-8">
         <a
           href="#top"
-          className="font-mono text-sm font-semibold tracking-[0.1em] text-ink"
+          className="link-sweep font-mono text-sm font-semibold tracking-widest text-ink"
         >
           EJL
         </a>
 
         <nav aria-label="Sections">
           <ul className="flex items-center gap-4 sm:gap-7">
-            {content.nav.map((item) => (
-              <li key={item.href}>
-                <a
-                  href={item.href}
-                  className="font-mono text-xs text-ink-secondary transition-colors hover:text-client sm:text-sm"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
+            {content.nav.map((item) => {
+              const isActive = active === item.href
+              return (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    aria-current={isActive ? 'true' : undefined}
+                    className={`link-sweep font-mono text-xs sm:text-sm ${
+                      isActive
+                        ? 'text-client'
+                        : 'text-ink-secondary hover:text-client'
+                    }`}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              )
+            })}
           </ul>
         </nav>
       </div>

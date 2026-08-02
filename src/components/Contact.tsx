@@ -2,7 +2,7 @@ import { content } from '../content'
 import { Section } from './Section'
 
 const linkClass =
-  'font-mono text-sm text-ink-secondary transition-colors hover:text-client'
+  'link-sweep font-mono text-sm text-ink-secondary hover:text-client'
 
 export function Contact() {
   const { site } = content
@@ -12,7 +12,7 @@ export function Contact() {
       <div className="flex flex-col gap-8">
         <a
           href={`mailto:${site.email}`}
-          className="font-mono text-xl break-words text-ink transition-colors hover:text-client sm:text-3xl"
+          className="link-sweep self-start font-mono text-xl wrap-break-word text-ink hover:text-client sm:text-3xl"
         >
           {site.email}
         </a>

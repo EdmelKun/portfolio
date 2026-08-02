@@ -22,7 +22,7 @@ function StatusLabel({ status }: { status: WorkItem['status'] }) {
 
 function WorkCard({ item }: { item: WorkItem }) {
   return (
-    <article className="flex flex-col gap-4 rounded-sm border border-hairline bg-ground-bottom/40 p-6">
+    <article className="group flex flex-col gap-4 rounded-sm border border-hairline bg-ground-bottom/40 p-6 transition duration-300 ease-out hover:-translate-y-0.5 hover:border-client/50 hover:bg-ground-bottom/70">
       <div className="flex items-baseline justify-between gap-4">
         <h3 className="font-mono text-lg font-semibold text-ink">
           {item.name}
@@ -45,7 +45,7 @@ function WorkCard({ item }: { item: WorkItem }) {
           href={item.url}
           target="_blank"
           rel="noreferrer"
-          className="font-mono text-xs text-ink-muted transition-colors hover:text-client"
+          className="link-sweep self-start font-mono text-xs text-ink-muted hover:text-client"
         >
           {displayUrl(item.url)} ↗
         </a>

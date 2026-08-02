@@ -2,7 +2,7 @@ import { content } from '../content'
 import { Motif } from './Motif'
 
 const linkClass =
-  'font-mono text-sm text-ink-secondary transition-colors hover:text-client'
+  'link-sweep font-mono text-sm text-ink-secondary hover:text-client'
 
 export function Hero() {
   const { site, hero } = content
@@ -32,7 +32,7 @@ export function Hero() {
       <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
         <a
           href={`mailto:${site.email}`}
-          className="rounded-sm border border-client/40 bg-client/10 px-4 py-2 font-mono text-sm text-client transition-colors hover:bg-client/20"
+          className="rounded-sm border border-client/40 bg-client/10 px-4 py-2 font-mono text-sm text-client transition duration-300 ease-out hover:-translate-y-0.5 hover:border-client/70 hover:bg-client/20"
         >
           email me
         </a>
