@@ -8,9 +8,10 @@ export function Hero() {
   const { site, hero } = content
 
   return (
-    <header
+    <section
       id="top"
-      className="flex min-h-[88svh] flex-col justify-center gap-6 pt-24 pb-20"
+      aria-label="Introduction"
+      className="flex min-h-[88svh] flex-col justify-center gap-6 pt-16 pb-20"
     >
       <p className="font-mono text-xs tracking-[0.2em] text-client uppercase">
         {site.role}
@@ -55,6 +56,6 @@ export function Hero() {
           {site.location} · {site.availability}
         </span>
       </div>
-    </header>
+    </section>
   )
 }
